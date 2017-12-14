@@ -1,8 +1,10 @@
-
 function runBar1(){
+	if(nbenfant >= 7) {
 	$ ("#progressbar1").css('display','inline-block');
 	$('#progressb1').one('webkitAnimationEnd oanimationend msAnimationEnd animationend',   
   function(e) {
+	  
+	  
     
 		var s2 = Snap('#animated2');
 		var progress2 = s2.select('#progress2');
@@ -12,6 +14,8 @@ function runBar1(){
 		Snap.animate(0,251.2, function( value ) {
 			progress2.attr({ 'stroke-dasharray':value+',251.2'});
 		}, 500);
+		
+		$("#nb7").css('display','inline');
 		
 		var count2 = $(('#count2'));
 		$({ Counter2: 0 }).animate({ Counter2: count2.text() }, {
@@ -26,15 +30,17 @@ function runBar1(){
 		  }
 		});
 
-
   });
+   }
 }
 
 function runBar2() {
-	
+	 if(nbenfant >= 10) {
 		$ ("#progressbar2").css('display','inline-block');
 	$('#progressb2').one('webkitAnimationEnd oanimationend msAnimationEnd animationend',   
   function(e) {
+	
+	 
 	
 	var s3 = Snap('#animated3');
 				var progress3 = s3.select('#progress3');
@@ -45,6 +51,9 @@ function runBar2() {
 					progress3.attr({ 'stroke-dasharray':value+',251.2'});
 				}, 500);
 				var count3 = $(('#count3'));
+				
+				$("#nb10").css('display','inline');
+				
 		$({ Counter3: 0 }).animate({ Counter3: count3.text() }, {
 		  duration: 500,
 		  easing: 'linear',
@@ -55,13 +64,18 @@ function runBar2() {
 			
 		  }
 		});
-				  });
+	  
+	});
+	}
 }
 
 function runBar3(){
+	  if(nbenfant >= 20) {
 	$ ("#progressbar3").css('display','inline-block');
 	$('#progressb3').one('webkitAnimationEnd oanimationend msAnimationEnd animationend',   
   function(e) {
+	  
+	  
 	
 	var s4 = Snap('#animated4');
 				var progress4 = s4.select('#progress4');
@@ -72,6 +86,9 @@ function runBar3(){
 					progress4.attr({ 'stroke-dasharray':value+',251.2'});
 				}, 500);
 				var count4 = $(('#count4'));
+				
+				$("#nb20").css('display','inline');
+				
 		$({ Counter4: 0 }).animate({ Counter4: count4.text() }, {
 		  duration: 500,
 		  easing: 'linear',
@@ -82,14 +99,16 @@ function runBar3(){
 			
 		  }
 		});
+
 				  });
+				  	}
 }
 
 function runBar4(){
+	 if(nbenfant >= 50) {
 	$ ("#progressbar4").css('display','inline-block');
 	$('#progressb4').one('webkitAnimationEnd oanimationend msAnimationEnd animationend',   
-  function(e) {
-	
+  function(e) {  
 	var s5 = Snap('#animated5');
 				var progress5 = s5.select('#progress5');
 
@@ -99,6 +118,10 @@ function runBar4(){
 					progress5.attr({ 'stroke-dasharray':value+',251.2'});
 				}, 500);
 				var count5 = $(('#count5'));
+				
+				$("#nb50").css('display','inline');
+				
+				
 		$({ Counter5: 0 }).animate({ Counter5: count5.text() }, {
 		  duration: 500,
 		  easing: 'linear',
@@ -109,6 +132,8 @@ function runBar4(){
 			
 		  }
 		});
-				  });
+	 
+	  });
+   }
 }
 

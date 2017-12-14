@@ -62,7 +62,7 @@
                 <div id="logo-desk">
                     <a href="index.php">
                     <?php if($i == 1){
-                        echo '<img id="logo-static" src="img/logo-blanc.svg" alt="logo pulse">';
+                        echo '<img id="logo-static" src="img/logo-blanc.png" alt="logo pulse">';
                     }else{
                         echo '<img id="logo-static" src="img/pulsenb.png" alt="logo pulse">';
                      } ?>

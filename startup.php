@@ -43,11 +43,12 @@ include"php/session.php";
         </div>
         <div class="display-start-2">
             <div class="container-start-div-2 reveal">
-                <h3><b>Déjà visionnaires</b><br>
+                <h3 id="punsh"><b>Faites courir votre enfant une heure, <br>votre ordinateur fonctionnera pendant huit heures !
+
+</b><br>
                     <br>
-                Les jeunes générations sont l’énergie de demain. Pulse Energie propose aux entreprises de s’auto suffir en électricité, en ouvrant des crèches privées à l’intérieur de leurs locaux d’entreprises intéressées.
-                    <br><br>
-                Notre mission est d’ouvrir le regard des populations sur les nouveaux moyens de production d’énergie propre qui ne demandent qu'à s’intégrer dans notre quotidien.  
+                    <b>Laissez-le hurler pendant une journée, <br>votre lampe de bureau restera allumée !
+</b>
                 </h3>
                 <?php if($i == 1){
                                 echo '<img src="img/runner.png" alt="production d énergie" id="basket">';
@@ -73,10 +74,13 @@ include"php/session.php";
             </div>
             <div class="display-start-2">
                 <div class="container-start-div-2">
-                    <h3>
-                         <b>Déjà visionnaires</b><br>
-                         <br>
-                         Les jeunes générations sont l’énergie de demain. Pulse Energie propose aux entreprises de s'auto suffir en électricité, en ouvrant des crèches privées à l’intérieur de leurs locaux
+                    <h3 id="punsh">
+                         <b>Faites courir votre enfant une heure, <br>votre ordinateur fonctionnera pendant huit !
+
+</b><br>
+                    <br>
+                    <b>Laissez-le hurler pendant une journée, <br>votre lampe de bureau restera allumée !
+</b>
                     </h3>
                     <div class="picto-flex">
                         <div class="picto">

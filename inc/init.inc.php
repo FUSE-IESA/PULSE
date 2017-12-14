@@ -6,10 +6,11 @@ ini_set("display_errors",1);
 // CONNEXION A LA DB
 //connexion base de donnée :
 define('SGBD', 'mysql'); // type de bdd
-define('HOSTNAME', 'db711430897.db.1and1.com'); //domaine du serveur
-define('USER', 'dbo711430897'); // nom utilisateur
-define('PASSWORD', 'Iesa2017%'); // pour utilisateur mac
-define('DATABASE', 'db711430897'); // nom de la base de donnée
+define('HOSTNAME', 'localhost'); //domaine du serveur
+define('USER', 'root'); // nom utilisateur
+//define('PASSWORD', '');
+define('PASSWORD', 'root'); // pour utilisateur mac
+define('DATABASE', 'pulse'); // nom de la base de donnée
 
 $options = array(
     PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8", //gérer l'encodage

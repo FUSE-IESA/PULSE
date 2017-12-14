@@ -65,7 +65,7 @@ input:checked + .slider:before {
         height: 70%;
         margin: auto;
         font-size: 1.6vw;
-        width: 50%;
+        width: 60%;
     }
     
     .titre{
@@ -272,7 +272,6 @@ position: absolute;
         display: none;
     }
     header{
-        height: 4vw;
         background-color: #000;
     }
     #bloc-menu{
@@ -377,9 +376,9 @@ position: absolute;
     .logo-mobile{
         display: none;
     }
-    #logo-desk a{width: 100%;display: flex; margin: auto;}
+    #logo-desk a{width: 100%;display: block; margin: auto;}
     #logo-desk a img{
-        width: 80%;
+        width: 140px;
         margin: auto;
     }
     
@@ -681,7 +680,7 @@ position: absolute;
          font-weight: 800;
     }
     .container-start-div-2 h3 b{
-       font-size: 2vw;
+       font-size: 1.5vw;
          font-weight: 800;
     }
     .display-start-2{
@@ -696,7 +695,7 @@ position: absolute;
         width: 70%;
         margin: auto;
         display: block;
-        margin-top: auto;
+        margin-top: 0;
         margin-bottom: auto;
         
         
@@ -706,6 +705,7 @@ position: absolute;
       width: 70%;
        
     }
+
     #container-start-2{
         background-image: url(../img/shemanb.png);
         background-color: #3F3F3F;
@@ -715,7 +715,7 @@ position: absolute;
     }
     .display-start-3 h2{
         display: block;
-        margin-top: 8%;
+        margin-top: 4%;
 		font-size:2vw;
 		font-weight: 800;
     }
@@ -988,7 +988,7 @@ position: absolute;
     /* PAGE CONTACT */
      #container-contact-1{
          display: flex;
-         height: 80%;
+         height: 90%;
          width: 100%;
 
 
@@ -1474,14 +1474,16 @@ a.animated-button.victoria-one:after {
         color: rgba(255, 255, 255, 0.7);
         padding: 1%;
        border-radius: 0;
-        font-size: 0.8vw;
-        height: 5%;
+/*        font-size: 0.8vw;
+*/        height: 32px;
         bottom: 0;
         border:none;
         display: flex;
         align-self: flex-end;
+        line-height: 1.1vh;
 
     }
+
     #cont-gauge h3{
         text-align: center;
 
@@ -1534,6 +1536,95 @@ a.animated-button.victoria-one:after {
 	.desktop_none{
 		display:none;
 	}
+
+
+
+    .bloc1 , .bloc2, .bloc3, .bloc4 , .bloc5 {
+    width:10%;
+    display: inline-block;  
+    vertical-align: middle;
+
+}
+
+.nb5 , .nb7 , .nb10 , .nb20 {
+    width: 10%;
+    display: inline-block;
+    padding-right : 80px;
+}
+
+.nb50 {
+    width: 10%;
+    display: inline-block;
+}
+
+svg{vertical-align: middle;}
+
+
+#parrentprogress {
+    display: inline-block;
+    width: 75px;
+}
+
+
+
+#progressbar1 , #progressbar2, #progressbar , #progressbar3 , #progressbar4  {
+    display: none;
+    width: 75px;
+    height: 1px;
+    clear: both;
+    padding-left: 5px;
+    padding-right: 5px;
+
+}
+
+#progress , #progressb1 , #progressb2 , #progressb3, #progressb4 {
+    background: black; /*-- Color of the bar --*/
+    height: 1px;
+    width: 0%;
+    max-width: 100%;
+    float: left;
+    -webkit-animation: progress 0.1s 1 forwards;
+    -moz-animation: progress 0.1s 1 forwards;
+    -ms-animation: progress 0.1s 1 forwards;
+    animation: progress 0.1s 1 forwards;
+}
+
+#pbaranim {
+    height: 15px;
+    width: 100%;
+    overflow: hidden;
+   
+    -moz-opacity: 0.25;
+    -khtml-opacity: 0.25;
+    opacity: 0.25;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=25);
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=25);
+    filter: alpha(opacity=25);
+}
+
+@-webkit-keyframes progress { 
+    from { }
+
+    to { width: 100% }
+}
+
+@-moz-keyframes progress { 
+    from { }
+
+    to { width: 100% }
+}
+
+@-ms-keyframes progress { 
+    from { }
+
+    to { width: 100% }
+}
+
+@keyframes progress { 
+    from { }
+
+    to { width: 100% }
+}
 
    
 

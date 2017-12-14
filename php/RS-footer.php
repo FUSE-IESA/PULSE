@@ -70,34 +70,41 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="js/scrollreveal.js"></script>
         <script>
-
-        function bot(){
-            var h = $('#menu-mobile').height();
-                var w = $('#menu-mobile').width();
-                w2 = w*4;
-                w3 = w2 / 100;
-                var nbot = h + w3;
             
-            var largeur_fenetre = $(window).width();
-            if(largeur_fenetre>950){
-                nbot = 0;
-            }
 
 
-            $('footer').css('margin-bottom', nbot);
-        };
 
-        bot();
 
-        $(window).resize(function() {
-            bot();
-        });
-            
+//        function bot(){
+//            var h = $('#menu-mobile').outerHeight();
+//           
+//                var w = $('#menu-mobile').width();
+//             console.log(h +" "+ w);
+//                w2 = w*4;
+//                w3 = w2 / 100;
+//                var nbot = h + w3;
+//                console.log(nbot);
+//            
+//            var largeur_fenetre = $(window).width();
+//            if(largeur_fenetre>950){
+//                h = 0;
+//            }
+//
+//
+//            $('footer').css('margin-bottom', h);
+//        };
+//
+//        bot();
+//
+//        $(window).resize(function() {
+//            bot();
+//        });
+//            
             $('#mode_eco').click(function(){
                 var mob = $("#css_mobile").attr('href');
                 if(mob.indexOf("nuit") == -1){
-                   $('#check_eco').removeAttr("checked");
-                    var test = 2;
+                    $('#check_eco').removeAttr("checked");
+                    var ajax = 2;
                     $("#css_mobile").attr('href', 'css/style-nuit.css');
                     $("#css_desktop").attr('href', 'css/media-desktop-nuit.css');
                     $("#batterie").attr('src', 'img/batterienb.gif');
@@ -128,9 +135,13 @@
                     $("#twitternb").attr('src', 'img/twitternb.png');
                     $("#mediumnb").attr('src', 'img/meidumnb.png');
                     $("#linkedinnb").attr('src', 'img/linkedinnb.png');
+                    if(document.getElementById('bloc-text-graph')){
+                    graphs();    
+                        }
+                    
                 }else{
                    $('#check_eco').attr("checked", "true")
-                    var test = 1;
+                    var ajax = 1;
                     $("#css_mobile").attr('href', 'css/style.css');
                     $("#css_desktop").attr('href', 'css/media-desktop.css');
                     $("#batterie").attr('src', 'img/icon/picto1.gif');
@@ -146,7 +157,7 @@
                     $("#barnb").attr('src', 'img/icon/bar-chart.png');
                     $("#onde").attr('src', 'img/icon/onde.png');
                     $("#onden").attr('src', 'img/icon/onde.png');
-                    $("#logo-static").attr('src', 'img/logo-blanc.svg');
+                    $("#logo-static").attr('src', 'img/logo-blanc.png');
                     $("#animpas").attr('src', 'img/anim-2.gif');
                     $("#logopulse").attr('src', 'img/icon/pulse-logo.png');
                     $("#produit").attr('src', 'img/icon/idea.png');
@@ -161,12 +172,17 @@
                     $("#twitternb").attr('src', 'img/icon/Twitter.png');
                     $("#mediumnb").attr('src', 'img/icon/meidum.png');
                     $("#linkedinnb").attr('src', 'img/icon/linked_in.png');
+                    
+                    
+                    if(document.getElementById('bloc-text-graph')){
+                    graphs();    
+                        }
                 };
                 
                 $.ajax({
                   type: "POST",
-                  url: "core/change.php",
-                  data: { ref: test }
+                  url: "core/change.php", 
+                    data: { ref: ajax }
                 }).done(function( msg )
                         {                       
                         });
@@ -175,7 +191,7 @@
             function maj(){
                 var mob = $("#css_mobile").attr('href');
                 if(mob.indexOf("nuit") == -1){
-                    var test = 2;
+                    var ajax = 2;
                     $("#css_mobile").attr('href', 'css/style-nuit.css');
                     $("#css_desktop").attr('href', 'css/media-desktop-nuit.css');
                     $("#batterie").attr('src', 'img/batterienb.gif');
@@ -206,8 +222,22 @@
                     $("#twitternb").attr('src', 'img/twitternb.png');
                     $("#mediumnb").attr('src', 'img/meidumnb.png');
                     $("#linkedinnb").attr('src', 'img/linkedinnb.png');
+                    
+                    $("#progress").attr('stroke', '#000');
+                    $("#progress2").attr('stroke', '#000');
+                    $("#progress3").attr('stroke', '#000');
+                    $("#progress4").attr('stroke', '#000');
+                    $("#progress5").attr('stroke', '#000');
+                    
+                    if(document.getElementById('bloc-text-graph')){
+                    graphs();    
+                        }
+                    
+                    
+                    
+                    
                 }else{
-                    var test = 1;
+                    var ajax = 1;
                     $("#css_mobile").attr('href', 'css/style.css');
                     $("#css_desktop").attr('href', 'css/media-desktop.css');
                     $("#batterie").attr('src', 'img/icon/picto1.gif');
@@ -223,7 +253,7 @@
                     $("#barnb").attr('src', 'img/icon/bar-chart.png');
                     $("#onde").attr('src', 'img/icon/onde.png');
                     $("#onden").attr('src', 'img/icon/onde.png');
-                    $("#logo-static").attr('src', 'img/logo-blanc.svg');
+                    $("#logo-static").attr('src', 'img/logo-blanc.png');
                     $("#animpas").attr('src', 'img/anim-2.gif');
                     $("#logopulse").attr('src', 'img/icon/pulse-logo.png');
                     $("#produit").attr('src', 'img/icon/idea.png');
@@ -238,14 +268,24 @@
                     $("#twitternb").attr('src', 'img/icon/Twitter.png');
                     $("#mediumnb").attr('src', 'img/icon/meidum.png');
                     $("#linkedinnb").attr('src', 'img/icon/linked_in.png');
-                }
+                    
+                    $("#progress").attr('stroke', '#e2d088');
+                    $("#progress2").attr('stroke', '#e2d088');
+                    $("#progress3").attr('stroke', '#e2d088');
+                    $("#progress4").attr('stroke', '#e2d088');
+                    $("#progress5").attr('stroke', '#e2d088');
+                    
+                    if(document.getElementById('bloc-text-graph')){
+                    graphs();    
+                        }
+                };
                 
                 
                 
                 $.ajax({
                   type: "POST",
                   url: "core/change.php",
-                  data: { ref: test }
+                  data: { ref: ajax }
                 }).done(function( msg )
                         {                       
                         });

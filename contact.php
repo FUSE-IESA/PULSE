@@ -26,7 +26,7 @@ include "inc/init.inc.php";
         </a>
 </div>
 <section class="container" id="container-contact-1">
-    <img class="map-full none-desk" src="img/img1.jpg" alt="map">
+    <div class="map-full none-desk"></div>
     
     <div class="text-contact reveal">
         <div class="adresse">

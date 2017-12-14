@@ -29,7 +29,7 @@ include"php/session.php";
     
     <div class="text-techno reveal">
         <div>
-        <h2>Transformer l’énergie cinétique en énergie propre
+        <h2>Transformer leur énergie en énergie propre
             </h2>
 <h3>
     La composition de nos solutions maximise la production d'énergie et la capture de données, en déclenchant plusieurs générateurs par pas ou par vibration sonore.

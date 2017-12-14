@@ -24,9 +24,10 @@ include"php/session.php";
                  } ?>
     </a>
 </div>
-<section class="container" id="container-contact-1">
-    
-    <div class="text-contact text-contact-mobile reveal">
+ <section class="container" id="container-contact-1">
+
+
+     <div class="text-contact text-contact-mobile reveal">
         <div class="connexion">
             <figure class="centrer"><img id="img-stat-creche" src="img/icon/stats-creche.png" alt="statistiques" ></figure>
             <h3 class="titre blanc">Nos crèches produisent de l'électricité grâce à Pulse!</h3>
@@ -44,13 +45,64 @@ include"php/session.php";
                 </figure>
             <h3 class="titre noir">Accédez aux statistiques 
 de votre enfant</h3>
-            <div class="reveal centrer"><a href="#?w=400" id="btn-co" rel="popup_connexion" class="poplight inscrire animated-button victoria-one scroll btn-blanc">Connectez-vous</a></div>
-            <p class="inscrire"><a href="#?w=400" id="btn-inscr" rel="popup_inscription" class="poplight inscrire btn-close pascom">Vous n’avez pas de compte ? Inscrivez-vous !</a></p>
+            <div class="reveal centrer"><a href="#?w=400" id="btn-co" class="poplight inscrire animated-button victoria-one scroll btn-blanc" rel="popup_connexion">Connectez-vous</a></div>
+            <p class="inscrire"><a href="#?w=400" rel="popup_inscription" class="btn-inscr poplight inscrire">Vous n’avez pas de compte ? Inscrivez-vous !</a></p>
         </div>
     </div>
-</section>
+     <div class="cont-modal">
+         <div id="popup_inscription" class="popup_block">
 
-<div class="cont-modal">
+             <form id="inscription" method="post" action="core/addInscription.php">
+                 <h3 class="titre_inscription">S'inscrire</h3>
+                 <div class="form-group-contact">
+                     <p class="label">Nom complet</p>
+                     <input type="text" class="form-control-contact verif-1"  placeholder="Nom complet" name="nom">
+                 </div>
+                 <div class="form-group-contact">
+                     <p class="label">Adresse mail</p>
+                     <input type="text" class="form-control-contact verif-1" placeholder="Adresse mail" name="mail">
+                 </div>
+                 <div class="form-group-contact">
+                     <p class="label">Mot de passe</p>
+                     <input type="text" class="form-control-contact verif-1"  placeholder="Mot de passe" name="mdp">
+                 </div>
+                 <div class="form-group-contact">
+                     <p class="label">Confirmation du mot de passe</p>
+                     <input type="text" class="form-control-contact verif-1" placeholder="Confirmation du mot de passe" name="conf">
+                 </div>
+                 <div class="right">
+                     <button class="validation">Valider</button>
+                 </div>
+
+                 <p class="inscrire"><a href="#popup_connexion" rel="popup_inscription" class="btn-close-co poplight inscrire pascom">Vous avez deja un compte ? Connecter-vous !</a></p>
+
+             </form>
+         </div>
+
+         <div id="popup_connexion" class="popup_block">
+             <div class="cont-popup">
+                 <h3 class="titre_inscription">Se connecter</h3>
+                 <div class="form-group-contact">
+                     <p class="label">Adresse mail</p>
+                     <input type="text" class="form-control-contact verif-1" id="nomInput" placeholder="Adresse mail" name="nom">
+                 </div>
+                 <div class="form-group-contact">
+                     <p class="label">Mot de passe</p>
+                     <input type="text" class="form-control-contact verif-1" placeholder="Mot de passe" name="nom">
+                 </div>
+                 <div class="right">
+                     <button class="validation" id="val_co">Valider</button>
+                 </div>
+                 <p class="inscrire"><a href="#popup_inscription" rel="popup_inscription" class="btn-close poplight inscrire pascom">Vous n’avez pas de compte ? Inscrivez-vous !</a></p>
+
+             </div>
+         </div>
+     </div>
+
+ </section>
+
+
+<!--
 <div id="popup_inscription" class="popup_block">
 	
     <form id="inscription" method="post" action="core/addInscription.php">
@@ -74,7 +126,6 @@ de votre enfant</h3>
         <div class="right">
             <button class="validation">Valider</button>
         </div>
-        <p class="inscrire"><a href="#?w=400" rel="popup_connexion" class="btn-close-co poplight inscrire pascom">Vous avez deja un compte ? Connectez-vous !</a></p>
     </form>
 </div>
         
@@ -91,10 +142,10 @@ de votre enfant</h3>
         <div class="right">
             <button class="validation" id="val_co">Valider</button>
         </div>
-        <p class="inscrire"><a href="#?w=400" id="btn-inscr" rel="popup_inscription" class="poplight inscrire btn-close pascom">Vous n’avez pas de compte ? Inscrivez-vous !</a></p>
+        <p class="inscrire"><a href="#?w=400" rel="popup_inscription" class="poplight inscrire" id="pascom">Vous n’avez pas de compte ? Inscrivez-vous !</a></p>
 </div>
-</div>
-    
+-->
+
 
 <?php include 'php/RS-footer.php'; ?>
 
@@ -102,8 +153,6 @@ de votre enfant</h3>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
 <script>
     
-    $(document).ready(function() {
-        
         
 var larg = $(window).width();  
 
@@ -111,31 +160,33 @@ var larg = $(window).width();
     
     $("#btn-co").click(function(){
         
+    if(larg < 950){
         $("#text-co").slideUp();
         document.getElementById('popup_connexion').style.display="block";
         document.getElementById('popup_connexion').style.transition='0.5s';
-
+    }
         
     
     });
     $(".btn-inscr").click(function(){
+    if(larg < 950){
         $("#text-co").slideUp();
         $("#popup_inscription").slideDown();
-    
+    }
         
     
     });
 
     $(".btn-close").click(function(){
         $("#popup_connexion").slideUp();
-        $("#text-co").slideUp();
         $("#popup_inscription").slideDown();
         document.getElementById('popup_connexion').style.transition='0.5s';
     });
     
     $(".btn-close-co").click(function(){
+    if(larg < 950){
         $("#popup_inscription").slideUp();
-
+    }
         document.getElementById('popup_connexion').style.display="block";
         document.getElementById('popup_connexion').style.transition='0.5s';
     
@@ -145,20 +196,10 @@ var larg = $(window).width();
     
     
 
-        
-}else{        
-    $('.pascom').click(function(){
-        $('#fade , .popup_block').fadeOut(function() {
-            $('#fade, a.close').remove();  //...ils disparaissent ensemble
-                    $('body').append('<div id="fade"></div>'); //Ajout du fond opaque noir
-            //Apparition du fond - .css({'filter' : 'alpha(opacity=80)'}) pour corriger les bogues de IE
-            $('#fade').css({'filter' : 'alpha(opacity=80)'}).fadeIn();
-        });
-    });
-        
-        //Lorsque vous cliquez sur un lien de la classe poplight et que le href commence par #
-$('a.poplight[href^=#]').click(function() {
-	var popID = $(this).attr('rel'); //Trouver la pop-up correspondante
+}else{
+    
+    function modal(){
+    var popID = $(this).attr('rel'); //Trouver la pop-up correspondante
 	var popURL = $(this).attr('href'); //Retrouver la largeur dans le href
 
 	//Récupérer les variables depuis le lien
@@ -194,7 +235,25 @@ $('a.poplight[href^=#]').click(function() {
 	$('#fade').css({'filter' : 'alpha(opacity=80)'}).fadeIn();
 
 	return false;
+    };
+        
+  
+    
+    
+    
+    
+    $('.pascom').click(function(){
+ 
+      modal();
+      
+    });
+        
+    
+//Lorsque vous cliquez sur un lien de la classe poplight et que le href commence par #
+$('a.poplight[href^=#]').click(function() {
+	modal();
 });
+    
 
 //Fermeture de la pop-up et du fond
 $('a.close, #fade').live('click', function() { //Au clic sur le bouton ou sur le calque...
@@ -208,10 +267,9 @@ $('a.close, #fade').live('click', function() { //Au clic sur le bouton ou sur le
         $('#nomInput').css('border-bottom', 'solid 1px red');
     });
         
-    
 }
-        
-    });
+    
+
         
 </script>
 

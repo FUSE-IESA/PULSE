@@ -33,7 +33,7 @@ include"php/session.php";
             <div class="reveal centrer"><a href="graph.php" class="animated-button victoria-one scroll btn-blanc">Découvrez vos statistiques</a></div>
         </div>
     </div>
-    <div id="text-co" class="text-contact-2 reveal">
+    <div class="text-contact-2 reveal">
         <div class="connexion">
             <figure class="centrer">
                 <?php if($i == 1){
@@ -44,13 +44,13 @@ include"php/session.php";
                 </figure>
             <h3 class="titre noir">Accédez aux statistiques 
 de votre enfant</h3>
-            <div class="reveal centrer"><a href="#?w=400" id="btn-co" rel="popup_connexion" class="poplight inscrire animated-button victoria-one scroll btn-blanc">Connectez-vous</a></div>
-            <p class="inscrire"><a href="#?w=400" id="btn-inscr" rel="popup_inscription" class="poplight inscrire btn-close pascom">Vous n’avez pas de compte ? Inscrivez-vous !</a></p>
+            <div class="reveal centrer"><a href="#?w=400" rel="popup_connexion" class="poplight inscrire animated-button victoria-one scroll btn-blanc">Connectez-vous</a></div>
+            <p class="inscrire"><a href="#?w=400" rel="popup_inscription" class="poplight inscrire">Vous n’avez pas de compte ? Inscrivez-vous !</a></p>
         </div>
     </div>
 </section>
 
-<div class="cont-modal">
+
 <div id="popup_inscription" class="popup_block">
 	
     <form id="inscription" method="post" action="core/addInscription.php">
@@ -74,7 +74,6 @@ de votre enfant</h3>
         <div class="right">
             <button class="validation">Valider</button>
         </div>
-        <p class="inscrire"><a href="#?w=400" rel="popup_connexion" class="btn-close-co poplight inscrire pascom">Vous avez deja un compte ? Connectez-vous !</a></p>
     </form>
 </div>
         
@@ -91,8 +90,7 @@ de votre enfant</h3>
         <div class="right">
             <button class="validation" id="val_co">Valider</button>
         </div>
-        <p class="inscrire"><a href="#?w=400" id="btn-inscr" rel="popup_inscription" class="poplight inscrire btn-close pascom">Vous n’avez pas de compte ? Inscrivez-vous !</a></p>
-</div>
+        <p class="inscrire"><a href="#?w=400" rel="popup_inscription" class="poplight inscrire" id="pascom">Vous n’avez pas de compte ? Inscrivez-vous !</a></p>
 </div>
     
 
@@ -104,56 +102,13 @@ de votre enfant</h3>
     
     $(document).ready(function() {
         
-        
-var larg = $(window).width();  
-
- if(larg < 950){
-    
-    $("#btn-co").click(function(){
-        
-        $("#text-co").slideUp();
-        document.getElementById('popup_connexion').style.display="block";
-        document.getElementById('popup_connexion').style.transition='0.5s';
-
-        
-    
-    });
-    $(".btn-inscr").click(function(){
-        $("#text-co").slideUp();
-        $("#popup_inscription").slideDown();
-    
-        
-    
-    });
-
-    $(".btn-close").click(function(){
-        $("#popup_connexion").slideUp();
-        $("#text-co").slideUp();
-        $("#popup_inscription").slideDown();
-        document.getElementById('popup_connexion').style.transition='0.5s';
-    });
-    
-    $(".btn-close-co").click(function(){
-        $("#popup_inscription").slideUp();
-
-        document.getElementById('popup_connexion').style.display="block";
-        document.getElementById('popup_connexion').style.transition='0.5s';
-    
-    });
-
-    
-    
-    
-
-        
-}else{        
-    $('.pascom').click(function(){
+    $('#pascom').click(function(){
         $('#fade , .popup_block').fadeOut(function() {
-            $('#fade, a.close').remove();  //...ils disparaissent ensemble
-                    $('body').append('<div id="fade"></div>'); //Ajout du fond opaque noir
-            //Apparition du fond - .css({'filter' : 'alpha(opacity=80)'}) pour corriger les bogues de IE
-            $('#fade').css({'filter' : 'alpha(opacity=80)'}).fadeIn();
-        });
+		$('#fade, a.close').remove();  //...ils disparaissent ensemble
+            $('body').append('<div id="fade"></div>'); //Ajout du fond opaque noir
+	//Apparition du fond - .css({'filter' : 'alpha(opacity=80)'}) pour corriger les bogues de IE
+	$('#fade').css({'filter' : 'alpha(opacity=80)'}).fadeIn();
+	});
     });
         
         //Lorsque vous cliquez sur un lien de la classe poplight et que le href commence par #
@@ -209,7 +164,7 @@ $('a.close, #fade').live('click', function() { //Au clic sur le bouton ou sur le
     });
         
     
-}
+        
         
     });
         

@@ -52,12 +52,12 @@ if(isset($_POST['mail'])){
         <div id="text-cont-1" class="reveal">
             <div class="trait"></div>
             <div class="trait-h">
-                <h2 class="h2-cont-1">Des milliers de jeunes</h2>
-                <h2 class="h2-cont-2">enfants produisent déjà<br> l'énergie de demain</h2>
+                <h2 class="h2-cont-2">Et si votre <span class="couleur">enfant</span> pouvait </h2>
+                <h2 class="h2-cont-2">enfin être <span class="couleur">utile</span> ?</h2>
             </div>
         </div>
         <div class="box-btn reveal">
-            <a href="stats.php" class="animated-button victoria-one scroll" id="btn_home">Trouvez votre crèche</a>
+            <a href="stats.php" class="animated-button victoria-one scroll" id="btn_home">Rentabilisez-le</a>
         </div>
     </section>
         <section class="container" id="container-2">
@@ -109,8 +109,8 @@ if(isset($_POST['mail'])){
                     echo '<img class="img-picto-home mobile_none" src="img/pasnb.png" alt="pas" id="pasnb">';
                  } ?>
                     
-                <p><b>Un pas</b> produit<br>
-                entre 4 et 7 watts</p>
+                <p><b>Un pas d'enfant</b><br>
+                    produit entre 4 et 7 watts</p>
             </div>
             <div class="div-picto-home">
                 <?php if($i == 1){
@@ -123,15 +123,15 @@ if(isset($_POST['mail'])){
                 }else{
                     echo '<img class="img-picto-home mobile_none" src="img/crinb.png" alt="cri" id="cri">';
                  } ?>                
-                <p><b>Un cri</b> de 70dB<br>
+                <p><b>Un cri d'enfant</b><br>
                     produit 2h d’électricité</p></div>
                         
 
         </section>
         <section class="container" id="container-4">
             <div id="cover-logo-2">
-                <p>Un enfant produit<br class="none-desk"> 10 000 pas par jour,
-                    <br>soit   <b> &nbsp40 000 watts</b>
+                <p>Un enfant produit<br class="none-desk"> 10 000 pas par jour, <br>soit &nbsp40 000 watts
+                    <br><b>Il produit, vous consommez ! </b>
                 </p>
             </div>
         </section>

@@ -52,7 +52,7 @@ if(isset($_POST['mail'])){
 <section class="container-graph">
     <div id="bloc-text-graph">
         <h2><b>Rentabilisez vos enfants</b><br>
-        Ils ont de la valeur, découvrez-là !</h2>
+        Ils ont de la valeur, découvrez-la !</h2>
         <div class="cont-div-graph">
             <div class="div-graph">
                 <h3>Entrez le nombre de berceaux</h3>
@@ -63,7 +63,7 @@ if(isset($_POST['mail'])){
                 <input type="text" class="form-simul" id="m2Input" placeholder="Surface de l’espace enfant en m2" name="mail">
             </div>
         </div>
-        <input id="simul" type="submit" name="lancer-simul" value="Lancer simulation">
+        <input id="simul" type="submit" name="lancer-simul" value="Lancer la simulation">
     </div>
 </section>
     
@@ -88,25 +88,38 @@ if(isset($_POST['mail'])){
     </div>
 </section>
 
-    
-<div class="blocs" id="animico">
+
+<div class="bloc" id="animico">
+    <p class="centrer"><b>Grâce à l’énergie produite, vous pourriez allumer : </b></p>
+<div class="bloc1">
 <svg class="circle-1" id="animated" viewbox="0 0 100 100">
  
-  <path id="progress" stroke-linecap="round" stroke-width="5" stroke="rgb(226, 208, 136)" fill="none"
+  <path id="progress" stroke-linecap="round" stroke-width="5" stroke="<?php if($i == 1){
+                    echo '#e2d088';
+                }else{
+                    echo '#000'; } ?>" fill="none"
         d="M50 10
            a 40 40 0 0 1 0 80
            a 40 40 0 0 1 0 -80">
   </path>
-  
-  <image x="0" y="23" xlink:href="img/icon/ampoule.png" alt="ampoule" width="100" height="50" />
+    <image x="0" y="23" xlink:href="img/icon/ampoule.png" alt="ampoule" width="100" height="50" />
+    
   <text display="none" id="count" x="50" y="50" text-anchor="middle" dy="7" font-size="20">100%</text>
 </svg>
+</div>
+
 <div id="parrentprogress">
 <div id="progressbar1"><div id="progressb1" ><div id="pbaranim"></div></div></div>
 </div>
+<div class="bloc2">
+
 <svg class="circle-2" id="animated2" viewbox="0 0 100 100">
  
-  <path id="progress2" stroke-linecap="round" stroke-width="5" stroke="rgb(226, 208, 136)" fill="none"
+  <path id="progress2" stroke-linecap="round" stroke-width="5" stroke="
+        <?php if($i == 1){
+                    echo '#e2d088';
+                }else{
+                    echo '#000'; } ?>" fill="none"
         d="M50 10
            a 40 40 0 0 1 0 80
            a 40 40 0 0 1 0 -80">
@@ -114,12 +127,18 @@ if(isset($_POST['mail'])){
   <text display="none" id="count2" x="50" y="50" text-anchor="middle" dy="7" font-size="20">100%</text>
 <image x="0" y="23" xlink:href="img/icon/print.png" alt="imprimante" width="100" height="50" />
   </svg>
+
+</div>
 <div id="parrentprogress">
 <div id="progressbar2"><div id="progressb2" ><div id="pbaranim"></div></div></div>
 </div>
+<div class="bloc3">
 <svg class="circle-3" id="animated3" viewbox="0 0 100 100">
  
-  <path id="progress3" stroke-linecap="round" stroke-width="5" stroke="rgb(226, 208, 136)" fill="none"
+  <path id="progress3" stroke-linecap="round" stroke-width="5" stroke="<?php if($i == 1){
+                    echo '#e2d088';
+                }else{
+                    echo '#000'; } ?>" fill="none"
         d="M50 10
            a 40 40 0 0 1 0 80
            a 40 40 0 0 1 0 -80">
@@ -127,12 +146,18 @@ if(isset($_POST['mail'])){
   <text display="none" id="count3" x="50" y="50" text-anchor="middle" dy="7" font-size="20">100%</text>
 <image  x="0" y="23" xlink:href="img/icon/ecran.png" alt="ecran" width="100" height="50" />
   </svg>
+
+</div>
 <div id="parrentprogress">
 <div id="progressbar3"><div id="progressb3" ><div id="pbaranim"></div></div></div>
 </div>
+<div class="bloc4">
 <svg class="circle-4" id="animated4" viewbox="0 0 100 100">
  
-  <path id="progress4" stroke-linecap="round" stroke-width="5" stroke="rgb(226, 208, 136)" fill="none"
+  <path id="progress4" stroke-linecap="round" stroke-width="5" stroke="<?php if($i == 1){
+                    echo '#e2d088';
+                }else{
+                    echo '#000'; } ?>" fill="none"
         d="M50 10
            a 40 40 0 0 1 0 80
            a 40 40 0 0 1 0 -80">
@@ -140,12 +165,18 @@ if(isset($_POST['mail'])){
   <image  x="0" y="23" xlink:href="img/icon/frigo.png" alt="frigo" width="100" height="50" />
   <text display="none" id="count4" x="50" y="50" text-anchor="middle" dy="7" font-size="20">100%</text>
 </svg>
+
+</div>
 <div id="parrentprogress">
 <div id="progressbar4"><div id="progressb4" ><div id="pbaranim"></div></div></div>
 </div>
+<div class="bloc5">
 <svg class="circle-5" id="animated5" viewbox="0 0 100 100">
  
-  <path id="progress5" stroke-linecap="round" stroke-width="5" stroke="rgb(226, 208, 136)" fill="none"
+  <path id="progress5" stroke-linecap="round" stroke-width="5" stroke="<?php if($i == 1){
+                    echo '#e2d088';
+                }else{
+                    echo '#000'; } ?>" fill="none"
         d="M50 10
            a 40 40 0 0 1 0 80
            a 40 40 0 0 1 0 -80">
@@ -154,6 +185,22 @@ if(isset($_POST['mail'])){
   <text display="none" id="count5" x="50" y="50" text-anchor="middle" dy="7" font-size="20">100%</text>
 </svg>
 
+</div>
+</br>
+<div class="nb5">
+<h5 id="nb5" > Lumière à volonté </h5>
+</div>
+<div class="nb7">
+<h5 id="nb7" > Assez d'imprimantes </h5>
+</div>
+<div class="nb10">
+<h5 id="nb10" > Beaucoup d'ordinateurs </h5>
+</div>
+<div class="nb20">
+<h5 id="nb20" > Pas mal de frigo </h5>
+</div>
+<div class="nb50">
+<h5 id="nb50" > Tous les ascenseurs </h5>
 </div>
     
     
@@ -181,16 +228,38 @@ if(isset($_POST['mail'])){
 <script src="js/js.js"></script>
 <script src="js/snap.svg-min.js"></script>
 <script>
-        $('#progress').css('display','none');
-        $('#progress2').css('display','none');
-        $('#progress3').css('display','none');
-        $('#progress4').css('display','none');
-        $('#progress5').css('display','none');
-        $("#progressbar1").css('display','none');
-        $("#progressbar2").css('display','none');
-        $("#progressbar3").css('display','none');
-        $("#progressbar4").css('display','none');
-
+    var mob = $("#css_mobile").attr('href');
+                    if(mob.indexOf("nuit") == -1){
+                        un = '#e2d088';  
+                        deux = '#3F3F3F';
+                        trois = "#F1F1F1";
+                        fonce = "#3F3F3F";
+                        clair = "#e2d088";
+                        
+                        
+                    }else{
+                        un = '#000';
+                        deux = '#BBBBBB';
+                        trois = '#FFF';
+                        
+                        fonce = "#000"
+                        clair = "#BBBBBB";
+                       }
+    
+	$('#progress').css('display','none');
+	$('#progress2').css('display','none');
+	$('#progress3').css('display','none');
+	$('#progress4').css('display','none');
+	$('#progress5').css('display','none');
+	$("#progressbar1").css('display','none');
+	$("#progressbar2").css('display','none');
+	$("#progressbar3").css('display','none');
+	$("#progressbar4").css('display','none');
+	$("#nb5").css('display','none');
+	$("#nb7").css('display','none');	
+	$("#nb10").css('display','none');
+	$("#nb20").css('display','none');
+	$("#nb50").css('display','none');
 
 
         var nbenfant = $("#berceauInput").val();
@@ -237,7 +306,7 @@ if(isset($_POST['mail'])){
             labels: ["Jan", "Fev", "Mars", "Avr", "Mai", "Juin", "Juil", "Aout", "Sep", "Oct", "Nov", "Déc"],
             datasets: [{
                 label: "Energie gagnée pas les pas (en kW)",
-                backgroundColor:'#e2d088',
+                backgroundColor:un,
                 data: [
                     janvier,
                     fevrier,
@@ -254,7 +323,7 @@ if(isset($_POST['mail'])){
                 ]
             }, {
                 label: 'Energie gagnée pas le bruit (en kW)',
-                backgroundColor:'#3F3F3F',
+                backgroundColor:deux,
                 data: [
                     bruit,
                     bruit,
@@ -270,8 +339,8 @@ if(isset($_POST['mail'])){
                     bruit
                 ]
             }, {
-                label: "L'energie que vous pouvez gagner (en kW)",
-                backgroundColor:'#F1F1F1',
+                label: "L'énergie que vous pouvez gagner (en kW)",
+                backgroundColor:trois,
                 borderColor: '#000',
                 borderWidth: 1,
                 data: [
@@ -319,6 +388,15 @@ if(isset($_POST['mail'])){
         };
     
     
+    
+    
+    
+            $('#simul').click(function(e){
+                graphs();
+
+
+         });
+    
     var opts = {
         angle: 0,
         lineWidth: 0.44,
@@ -330,9 +408,9 @@ if(isset($_POST['mail'])){
         },
         limitMax: false,     // If false, max value increases automatically if value > maxValue
         limitMin: false,     // If true, the min value of the gauge will be fixed
-        colorStart: '#3F3F3F',   // Colors
-        colorStop: '#e2d088',    // just experiment with them
-        strokeColor: '#3F3F3F',  // to see which ones work best for you
+        colorStart: fonce,   // Colors
+        colorStop: clair,    // just experiment with them
+        strokeColor: fonce,  // to see which ones work best for you
         generateGradient: true,
         highDpiSupport: true,     // High resolution support
         renderTicks: {
@@ -355,11 +433,77 @@ if(isset($_POST['mail'])){
     gauge.set(0); // set actual value
     
     
-            $('#simul').click(function(e){
-            nbenfant = $("#berceauInput").val();
+    
+    function graphs() {
+        
+        var mob = $("#css_mobile").attr('href');
+                    if(mob.indexOf("nuit") == -1){
+                        un = '#e2d088';  
+                        deux = '#3F3F3F';
+                        trois = "#F1F1F1";
+                        fonce = "#3F3F3F";
+                        clair = "#e2d088";
+                        
+                        
+                    }else{
+                        un = '#000';
+                        deux = '#BBBBBB';
+                        trois = '#FFF';
+                        
+                        fonce = "#000"
+                        clair = "#BBBBBB";
+                       }
+        
+        var opts = {
+        angle: 0,
+        lineWidth: 0.44,
+        radiusScale: 1,
+        pointer: {
+            length: 0.6, // // Relative to gauge radius
+            strokeWidth: 0, // The thickness
+            color: '#000000' // Fill color
+        },
+        limitMax: false,     // If false, max value increases automatically if value > maxValue
+        limitMin: false,     // If true, the min value of the gauge will be fixed
+        colorStart: fonce,   // Colors
+        colorStop: clair,    // just experiment with them
+        strokeColor: fonce,  // to see which ones work best for you
+        generateGradient: true,
+        highDpiSupport: true,     // High resolution support
+        renderTicks: {
+            divisions: 1,
+            divWidth: 0.1,
+            divLength: 1,
+            divColor: '#FFFFFF',
+            subDivisions: 3,
+            subLength: 1,
+            subWidth: 4.3,
+            subColor: '#FFFFFF'
+        }
+
+    };
+       
+
+        
+                nbenfant = $("#berceauInput").val();
                     surface = $("#m2Input").val();
                     
                     moyEn = 480 * nbenfant;
+        
+        
+    if(nbenfant < 11){
+        var jauge = 2300;
+       }
+    if(10 < nbenfant){
+        var jauge = 1200;
+       }
+        
+    var target = document.getElementById('foo'); // your canvas element
+    var gauge = new Gauge(target).setOptions(opts); // create sexy gauge!
+    gauge.maxValue = jauge; // set max gauge value
+    gauge.setMinValue(0);  // Prefer setter over gauge.minValue = 0
+    gauge.animationSpeed = 32; // set animation speed (32 is default value)
+    gauge.set(0); // set actual value
 
                     $('.nb_graph').html(moyEn+'kW');
 
@@ -467,12 +611,14 @@ if(isset($_POST['mail'])){
                     }else{
                        decembre1 = max - bruit - decembre;
                     }
+                
+                    
             
                     barChartData = {
-                    labels: ["jan", "Fev", "Mars", "Avr", "Mai", "Juin", "Juil", "Aout", "Sep", "Oct", "Nov", "Déc"],
+                    labels: ["Jan", "Fev", "Mars", "Avr", "Mai", "Juin", "Juil", "Aout", "Sep", "Oct", "Nov", "Déc"],
                     datasets: [{
                         label: "Energie gagnée pas les pas (en kW)",
-                        backgroundColor:'#e2d088',
+                        backgroundColor:un,
                         data: [
                             janvier,
                             fevrier,
@@ -489,7 +635,7 @@ if(isset($_POST['mail'])){
                         ]
                     }, {
                         label: 'Energie gagnée pas le bruit (en kW)',
-                        backgroundColor:'#3F3F3F',
+                        backgroundColor:deux,
                         data: [
                             bruit,
                             bruit,
@@ -505,8 +651,8 @@ if(isset($_POST['mail'])){
                             bruit
                         ]
                     }, {
-                        label: "L'energie que vous pouvez gagner (en kW)",
-                        backgroundColor:'#F1F1F1',
+                        label: "L'énergie que vous pouvez gagner (en kW)",
+                        backgroundColor:trois,
                         borderColor:'#000',
                         borderWidth: 1,
                         data: [
@@ -525,7 +671,7 @@ if(isset($_POST['mail'])){
                         ]
                     }]
                 };
-            
+            if(nbenfant != "") {
 var ctx = document.getElementById("canvas").getContext("2d");     
 window.myBar = new Chart(ctx, {
                 type: 'bar',
@@ -549,43 +695,57 @@ window.myBar = new Chart(ctx, {
                         }]
                     }
                 }
-            });            
-            myBar.update();
-            gauge.set(800);
-            $('#progress').css('display','none');
-            $('#progress2').css('display','none');
-            $('#progress3').css('display','none');
-            $('#progress4').css('display','none');
-            $('#progress5').css('display','none');
-            $("#progressbar1").css('display','none');
-            $("#progressbar2").css('display','none');
-            $("#progressbar3").css('display','none');
-            $("#progressbar4").css('display','none');
-
-
-            var s = Snap('#animated');
-            var progress = s.select('#progress');
-
-            progress.attr({strokeDasharray: '0, 251.2'});
-            $('#progress').css('display','block');
-            Snap.animate(0,251.2, function( value ) {
-                progress.attr({ 'stroke-dasharray':value+',251.2'});
-            }, 500);
-
-
-            var count = $(('#count'));
-            $({ Counter: 0 }).animate({ Counter: count.text() }, {
-              duration: 500,
-              easing: 'linear',
-              step: function () {
-                 console.log(this.Counter);
-                 if(this.Counter > 95) {
-                     console.log("dedans");
-                    runBar1()
-                 }
-              }
             });
-         });
+            
+            myBar.update();
+            gauge.set(800);  
+            $('#berceauInput').css('border-color','#000');
+            }else{
+                $('#berceauInput').css('border-color','red');
+            }
+                
+            	$('#progress').css('display','none');
+                $('#progress2').css('display','none');
+                $('#progress3').css('display','none');
+                $('#progress4').css('display','none');
+                $('#progress5').css('display','none');
+                $("#progressbar1").css('display','none');
+                $("#progressbar2").css('display','none');
+                $("#progressbar3").css('display','none');
+                $("#progressbar4").css('display','none');
+                    $("#nb5").css('display','none');
+                $("#nb7").css('display','none');	
+                $("#nb10").css('display','none');
+                $("#nb20").css('display','none');
+                $("#nb50").css('display','none');
+
+
+            if(nbenfant != "" && nbenfant != null && nbenfant >= 5) {
+                var s = Snap('#animated');
+                var progress = s.select('#progress');
+
+                progress.attr({strokeDasharray: '0, 251.2'});
+                $('#progress').css('display','block');
+                Snap.animate(0,251.2, function( value ) {
+                    progress.attr({ 'stroke-dasharray':value+',251.2'});
+                }, 500);
+
+                $("#circle-1").css('margin-bottom','0');
+                $("#nb5").css('display','inline');
+
+                var count = $(('#count'));
+                $({ Counter: 0 }).animate({ Counter: count.text() }, {
+                  duration: 500,
+                  easing: 'linear',
+                  step: function () {
+                    // console.log(this.Counter);
+                     if(this.Counter > 95) {
+                        runBar1()
+                     }
+                  }
+                });
+            }
+    }
 </script>
 </body>
 

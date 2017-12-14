@@ -1,6 +1,13 @@
 <?php
 include "../inc/init.inc.php";
 
+        function redirect($page){
+	//redirection
+	header('Location: '.$page);
+	//on bloque le reste des executions
+	exit();
+}
+
 //si on n'a pas reçu de formulaire 
 if(empty($_POST))
 	//on redirige vers le formulire
@@ -46,12 +53,7 @@ $error = false;
 
         $add->execute();	
         
-        function redirect($page){
-	//redirection
-	header('Location: '.$page);
-	//on bloque le reste des executions
-	exit();
-}
+
 
         redirect('../merci1.php');
     }
